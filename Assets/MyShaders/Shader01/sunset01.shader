@@ -1,4 +1,5 @@
-Shader "shader lab/assignment 1/sunset01" {
+Shader "ShaderLab/assignment01/sunset01"
+{
     Properties {
         [Header(Sky)]
         _SkyTopColor ("SkyTopColor", Color) = (1, 1, 1, 1)

@@ -1,4 +1,5 @@
-Shader "shader lab/week 3/hw03" {
+Shader "ShaderLab/assignment03/time03"
+{
     Properties {
         _hour ("hour", Float) = 0
         _minute ("minute", Float) = 0

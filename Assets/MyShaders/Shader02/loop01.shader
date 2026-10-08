@@ -1,4 +1,5 @@
-Shader "shader lab/assignment02/loop01" {
+Shader "ShaderLab/assignment02/loop"
+{
     SubShader {
         Tags {"RenderPipeline" = "UniversalPipeline"}
 
