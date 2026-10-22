@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: bs2_mat
+  m_Shader: {fileID: 4800000, guid: ad3a438e12aa357409ec18c1fda3a058, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Ints: []
+    m_Floats:
+    - _BandEdgeStrength: 0.12
+    - _BandEdgeWidth: 0.15
+    - _BandSoftness: 0.1562
+    - _BristleStrength: 1
+    - _CellJitter: 0.8
+    - _DebugView: 0
+    - _EdgeDisplacement: 0.237
+    - _EdgeInfluence: 0.321
+    - _FacetDensity: 2.2
+    - _FacetStrength: 1
+    - _GeometryNormalBlend: 0
+    - _GridRotation: 41.3
+    - _LightThreshold: 0.74
+    - _ShadowThreshold: 0.39
+    - _SpecExponent: 80
+    - _SpecSoftness: 0.207
+    - _SpecStrength: 1
+    - _SpecThreshold: 0.27
+    - _StrokeElongation: 12
+    - _StrokePigmentStrength: 0
+    - _StrokeScale: 11.5
+    - _WithinBandShading: 0.12
+    m_Colors:
+    - _EdgeColor: {r: 0.34999996, g: 0.25999996, b: 0.43999997, a: 1}
+    - _HighlightColor: {r: 1, g: 0.87, b: 0.59, a: 1}
+    - _LightColor: {r: 0.97999996, g: 0.63, b: 0.53, a: 1}
+    - _MidColor: {r: 0.54999995, g: 0.42999998, b: 0.56999993, a: 1}
+    - _ProxyCenter: {r: 0, g: 0, b: 0, a: 0}
+    - _ShadowColor: {r: 0.14999998, g: 0.20999995, b: 0.31999996, a: 1}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1

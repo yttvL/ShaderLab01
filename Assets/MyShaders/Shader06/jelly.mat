@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: jelly
+  m_Shader: {fileID: 4800000, guid: ec1a53a6ee07581409d0ef32101e4e86, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Ints: []
+    m_Floats:
+    - _ArmAmplitude: 0.19
+    - _ArmFrequency: 4.2
+    - _ArmSpeed: 1.2
+    - _BellLift: -0.169
+    - _BellRadius: 1
+    - _BobAmplitude: 0.06
+    - _BobSpeed: 1.1
+    - _FakeLightStrength: 0.25
+    - _FresnelPower: 3
+    - _FresnelStrength: 4
+    - _GlowIntensity: 0.65
+    - _PulseAmount: 0.22
+    - _PulseFalloff: 1.8
+    - _PulseSpeed: 2.4
+    - _TentacleAmplitude: 0.297
+    - _TentacleFrequency: 9
+    - _TentacleSideAmplitude: 0.085
+    - _TentacleSpeed: 3.1
+    m_Colors:
+    - _BellColor: {r: 0.8784314, g: 0.21960784, b: 0.75686276, a: 1}
+    - _BellEdgeColor: {r: 1, g: 0.7201257, b: 0.84404033, a: 1}
+    - _GlowColor: {r: 0.41999996, g: 0.95, b: 1, a: 1}
+    - _OralArmColor: {r: 0.9529412, g: 0.38039222, b: 0.41937923, a: 1}
+    - _TentacleColor: {r: 1, g: 0.19433957, b: 0.42291734, a: 1}
+    - _TentacleTipColor: {r: 0.40508187, g: 0.2730113, b: 0.42767292, a: 1}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
