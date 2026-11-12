@@ -50,11 +50,11 @@ Material:
     m_Ints: []
     m_Floats:
     - _displacementIntensity: 0.25
-    - _fresnelPower: 5.43
+    - _fresnelPower: 4.07
     - _gloss: 0.859
     - _normToggle: 0
     - _normalIntensity: 1
-    - _reflectivity: 0.438
+    - _reflectivity: 0.084
     m_Colors:
     - _surfaceColor: {r: 0.4, g: 0.1, b: 0.9, a: 1}
   m_BuildTextureStacks: []

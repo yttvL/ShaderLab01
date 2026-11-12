@@ -7,6 +7,7 @@
 
         // reflectivity of surface - brightness of reflection
         _reflectivity ("reflectivity", Range(0,1)) = 0.5
+        _fresnelPower ("fresnel power", Range(0,10)) = 5
     }
     SubShader {
         Tags { "RenderPipeline" = "UniversalPipeline" }
@@ -22,6 +23,7 @@
             CBUFFER_START(UnityPerMaterial)
             float _gloss;
             float _reflectivity;
+            float _fresnelPower;
             CBUFFER_END
 
             TEXTURECUBE(_IBL);
@@ -62,8 +64,10 @@
                 float mip = (1 - _gloss) * SPECULAR_MIP_STEPS;
                 float3 indirectSpecular = SAMPLE_TEXTURECUBE_LOD(_IBL, sampler_IBL, viewReflection, mip) * _reflectivity;
                 
+                float fresnel = 1-saturate(dot(viewDirection, normal));
+                fresnel = pow(fresnel, _fresnelPower);
                 
-                color = indirectSpecular;
+                color = indirectSpecular * fresnel;
 
                 return float4(color, 1.0);
             }

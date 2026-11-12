@@ -9,6 +9,9 @@
     SubShader {
         Tags {
             "RenderPipeline" = "UniversalPipeline"
+            "Queue" = "Background"
+            "RenderType" = "Background"
+            "PreviewType" = "Skybox"
         }
         
         Cull Off
@@ -46,7 +49,11 @@
 
             float4 frag (Interpolators i) : SV_Target {
                 float3 color = 0;
-
+                
+                float3 coord = normalize(i.uv) * 0.5 + 0.5;
+                
+                float l = smoothstep(0, 1, pow(coord.y + _offset, _contrast));
+                color = lerp(_colorLow, _colorHigh, l);
                 return float4(color, 1.0);
             }
             ENDHLSL

@@ -3,7 +3,7 @@
         _albedo ("albedo", 2D) = "white" {}
         [NoScaleOffset] _normalMap ("normal map", 2D) = "bump" {}
         [NoScaleOffset] _displacementMap ("displacement map", 2D) = "black" {}
-        
+        [NoScaleOffset] _IBL ("IBL Cube Map", Cube) = "black" {}
         _gloss ("gloss", Range(0,1)) = 1
         _normalIntensity ("normal intensity", Range(0, 1)) = 1
         _displacementIntensity ("displacement intensity", Range(0, 0.5)) = 0.25
@@ -17,7 +17,7 @@
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
             
-            
+            #define DIFFUSE_MIP_LEVEL 5
             #define MAX_SPECULAR_POWER 256
 
             CBUFFER_START(UnityPerMaterial)
@@ -27,6 +27,9 @@
 
             float4 _albedo_ST;
             CBUFFER_END
+            
+            TEXTURECUBE(_IBL);
+            SAMPLER(sampler_IBL);
 
             TEXTURE2D(_albedo);
             SAMPLER(sampler_albedo);
@@ -100,9 +103,23 @@
 
             float4 frag (Interpolators i) : SV_Target {
                 float3 color = 0;
+                float3 normal = get_normal(i);
+                
+                float2 directFalloff = lighting_falloff(i, normal);
+                float directDiffuseFalloff = directFalloff.r;
+                float directSpecularFalloff = directFalloff.g;
+                
+                float3 indirectDiffuse = SAMPLE_TEXTURECUBE_LOD(_IBL, sampler_IBL, normal, DIFFUSE_MIP_LEVEL);
                 
                 float3 surfaceColor = SAMPLE_TEXTURE2D(_albedo, sampler_albedo, i.uv).rgb;
                 
+                Light light = GetMainLight();
+                
+                float3 diffuse = surfaceColor * (directDiffuseFalloff * light.color + indirectDiffuse);
+                
+                float3 directSpecular = light.color * directSpecularFalloff;
+                
+                color = diffuse + directSpecular;
                 return float4(color, 1.0);
             }
             ENDHLSL

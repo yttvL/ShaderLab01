@@ -47,8 +47,8 @@ Material:
     m_Floats:
     - _contrast: 1
     - _displacementIntensity: 0.25
-    - _gloss: 0.356
-    - _normalIntensity: 1
+    - _gloss: 0.781
+    - _normalIntensity: 0.768
     - _offset: 0
     - _specularContrast: 32
     - _specularIntensity: 1

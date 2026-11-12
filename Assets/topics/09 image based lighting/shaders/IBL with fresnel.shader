@@ -132,8 +132,9 @@
                 float3 indirectSpecular = SAMPLE_TEXTURECUBE_LOD(_IBL, sampler_IBL, viewReflection, mip);
 
 
-                
-                
+                float fresnel = 1 - saturate(dot(viewDirection, normal));
+                fresnel = pow(fresnel, _fresnelPower);
+                reflectivity *= fresnel;
                 
                 // since the diffuse and reflective properties of an object are inversely related, we want to set up our surface color to lerp between black and the albedo based on the inverse of reflectivity
                 // if 0% reflective -> all diffuse
